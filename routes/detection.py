@@ -42,6 +42,12 @@ logger = logging.getLogger("detection")
 # ── swap which client to use via env var ──────────────────────────────────────
 # Set USE_RUNPOD=1 in your .env to route through RunPod.
 # Leave unset (or =0) to keep using the local DeepFace pipeline.
+
+
+UPLOAD_DIR = "uploaded_videos"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+running_processes = {}
+
 _USE_RUNPOD = os.getenv("USE_RUNPOD", "0") == "1"
 
 if _USE_RUNPOD:
@@ -163,11 +169,6 @@ async def process_frame(
     return await _process_image(
         file_bytes, camera_id, camera_role, file.filename
     )
-
-UPLOAD_DIR = "uploaded_videos"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-
-running_processes = {}
 
 @router.post("/camera/{camera_id}/start")
 async def start_camera(camera_id: str, file: UploadFile = File(...)):

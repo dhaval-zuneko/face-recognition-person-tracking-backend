@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+.env
+*.db
+*.sqbpro
+*.mp4
+processed_videos/
+uploaded_videos/
+*.pt

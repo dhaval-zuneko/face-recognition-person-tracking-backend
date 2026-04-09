@@ -133,7 +133,7 @@ def detect_faces_local(frame, camera_id):
 
                     if embedding is not None:
                         best_score = 0
-
+                        person_id = None
                         # ✅ FIX: safe iteration
                         for pid, data_list in db.items():
                             if not isinstance(data_list, list):
@@ -148,10 +148,15 @@ def detect_faces_local(frame, camera_id):
                                 if score > best_score:
                                     best_score = score
                                     person_id = pid
-                                    label = data["type"]
+                                    # label = data["type"]
 
                         if best_score > 0.6:
+                            label = "employee"
                             confidence = float(best_score)
+
+                        else:
+                            label = "visitor"
+                            person_id = None    
 
             except Exception as e:
                 print("DeepFace error:", e)
