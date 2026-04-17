@@ -1,0 +1,5 @@
+1. emp_2 from 00:00:00.017 to 00:00:02.013 | analyzed_frames=3 | best_stable_score=0.719
+2. emp_2 from 00:00:04.009 to 00:00:05.007 | analyzed_frames=2 | best_stable_score=0.598
+3. emp_1 from 00:00:13.991 to 00:00:16.985 | analyzed_frames=4 | best_stable_score=0.693
+4. emp_2 from 00:00:21.976 to 00:00:21.976 | analyzed_frames=1 | best_stable_score=0.564
+5. emp_1 from 00:00:22.974 to 00:00:22.974 | analyzed_frames=1 | best_stable_score=0.647
